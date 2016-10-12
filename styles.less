@@ -1,0 +1,139 @@
+:root {
+  --color-bg: #10101B;
+  --color-text-em: #16F;
+  --color-text-transparent: rgba(220,220,255,0.2);
+  --gradient-main: linear-gradient(to right, var(--color-text-em), cyan);
+  --font-main: "Source Code Pro", Helvetica, sans-serif;
+}
+
+.title-bar {
+  background: var(--color-bg);
+  padding: 1.3em;
+
+  & > .title {
+    text-shadow: 1px 1px var(--color-text-transparent);
+    font-family: var(--font-main);
+    color: var(--color-text-transparent);
+    -webkit-font-smoothing: auto;
+  }
+}
+
+.tab-bar {
+  background: #0D0D17;
+  -webkit-font-smoothing: auto;
+
+  .tab {
+    overflow: visible;
+  }
+
+  .tab .title {
+    background: 0;
+  }
+
+  .tab::before {
+    display: none;
+  }
+}
+
+.status-bar {
+  background: var(--color-bg);
+  font-size: 1em;
+}
+
+.underline-cursor {
+  background-color: var(--color-text-em);
+}
+
+atom-text-editor::shadow {
+  .bracket-matcher {
+    position: absolute;
+    border-bottom: 1px dotted rgba(30, 100, 255, 0.9);
+  }
+}
+
+.tree-view {
+  background-color: var(--color-bg);
+
+  &::before {
+    display: none;
+  }
+
+  .selected::before {
+    background-color: #15151F;
+  }
+}
+
+// style the background and foreground colors on the atom-text-editor-element
+// itself
+atom-text-editor {
+  -webkit-font-smoothing: grayscale;
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow
+// expression
+atom-text-editor::shadow {
+}
+
+// Vim-mode customization
+atom-text-editor.vim-mode.normal-mode {
+  &::shadow, & {
+    .cursor {
+      background-color: transparent !important;
+      border-bottom: 2px solid cyan !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
+.list-group li.list-nested-item.status-added > .list-item,
+.list-tree li.list-nested-item.status-added > .list-item,
+.list-group li:not(.list-nested-item).status-added,
+.list-tree li:not(.list-nested-item).status-added {
+  position: relative;
+  color: #424255 !important;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 10px);
+    right: calc(100% + 1px);
+    width: 5px;
+    height: 5px;
+    background: #A1FF38;
+    border-radius: 10px;
+  }
+}
+
+.list-group li.list-nested-item.status-modified > .list-item,
+.list-tree li.list-nested-item.status-modified > .list-item,
+.list-group li:not(.list-nested-item).status-modified,
+.list-tree li:not(.list-nested-item).status-modified {
+  position: relative;
+  color: #424255 !important;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 10px);
+    right: calc(100% + 1px);
+    width: 5px;
+    height: 5px;
+    background: orange;
+    border-radius: 10px;
+  }
+}
+
+.list-group li.list-nested-item.status-ignored > .list-item,
+.list-tree li.list-nested-item.status-ignored > .list-item,
+.list-group li:not(.list-nested-item).status-ignored,
+.list-tree li:not(.list-nested-item).status-ignored {
+  color: #2A2A3F;
+}
+
+
+.list-group li.list-nested-item > .list-item,
+.list-tree li.list-nested-item > .list-item,
+.list-group li:not(.list-nested-item),
+.list-tree li:not(.list-nested-item){
+  color: #424255;
+}

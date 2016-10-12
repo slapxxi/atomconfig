@@ -1,0 +1,9 @@
+storage
+compile-cache
+dev
+.apm
+.npm
+.node-gyp
+packages/blur-syntax
+blob-store
+packages

@@ -1,0 +1,10 @@
+blur:
+  title: "blur"
+  paths: [
+    "/Users/slava/github/blur-syntax"
+  ]
+"blur-light":
+  title: "blur-light"
+  paths: [
+    "/Users/slava/github/blur-syntax-light"
+  ]

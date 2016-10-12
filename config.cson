@@ -1,0 +1,153 @@
+"*":
+  "advanced-new-file":
+    showFilesInAutoComplete: true
+    suggestCurrentFilePath: true
+  "atom-material-ui":
+    colors:
+      abaseColor: "#1166ff"
+      paintCursor: true
+    fonts:
+      fontSize: 17
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui:
+      animations: false
+      panelShadows: true
+  "atom-ternjs":
+    inlineFnCompletionDocumentation: true
+    useSnippets: true
+  autocomplete:
+    includeCompletionsFromAllBuffers: true
+  "autocomplete-elixir": {}
+  "autocomplete-java": {}
+  "autocomplete-modules":
+    webpack: true
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+    includeCompletionsFromAllBuffers: true
+  "autocomplete-python": {}
+  autosave:
+    enabled: true
+  build:
+    minimizedHeight: 0.35
+  core:
+    destroyEmptyPanes: false
+    disabledPackages: [
+      "envygeeks-file-icons"
+      "file-type-icons"
+      "linter"
+      "language-python"
+      "Parinfer"
+      "proto-repl"
+    ]
+    excludeVcsIgnoredPaths: false
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "blur-syntax"
+    ]
+    useCustomTitleBar: true
+  "css-comb": {}
+  deprecated:
+    tool:
+      npmapm: true
+  "django-templates": {}
+  editor:
+    fontFamily: "\"Source Code Pro\""
+    fontSize: 15
+    invisibles: {}
+    preferredLineLength: 90
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    softWrapHangingIndent: 4
+    tabType: "soft"
+  emmet: {}
+  "exception-reporting":
+    userId: "6b797269-fcaf-8cab-78fe-97d729abd340"
+  "fancy-new-file": {}
+  "file-icons":
+    coloured: false
+    forceShow: true
+  "haskell-ghc-mod":
+    ghcModPath: "/Users/slava/.cabal/bin/ghc-mod"
+    ghcModiPath: "/Users/slava/.cabal/bin/ghc-modi"
+  "highlight-selected": {}
+  "ide-haskell":
+    useBackend: "haskell-ghc-mod"
+  iex:
+    colors: {}
+  irc:
+    channels: "#elixir-lang"
+    connectOnStartup: true
+    host: "https://irc.freenode.net"
+    nickname: "slavapavlutin"
+  "language-babel": {}
+  linter:
+    clearOnChange: true
+    lintOnChange: false
+    lintOnEditorFocus: false
+    lintOnFly: false
+    lintOnSave: true
+    statusBar: "Show error of the selected line"
+  "linter-elixirc":
+    elixircExecutablePath: "/usr/local/bin/elixirc"
+    includeDirs: "~/Projects/whisper"
+  "linter-pylint":
+    pythonPath: "/Users/slava/.pyenv/shims/python"
+  "linter-scss-lint":
+    executablePath: "/Users/slava/.rvm/gems/ruby-2.2.1/bin/scss-lint"
+  "markdown-preview":
+    useGitHubStyle: true
+  "one-dark-ui":
+    fontSize: 13
+    layoutMode: "Compact"
+  "python-tools": {}
+  term2:
+    colors: {}
+  "terminal-status": {}
+  "vim-mode":
+    startInInsertMode: true
+  welcome:
+    showOnStartup: false
+".babel.regexp.source":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 4
+".basic.html.text":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 2
+".clojure.source":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 4
+".django.html.text":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 2
+".django.python.source":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 2
+    tabLength: 2
+".js.jsx.source":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 4
+".languagebabel.ttlextension":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 4
+".python.source":
+  editor:
+    autoIndent: true
+    tabLength: 4
+".source.swift":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 4
+    tabLength: 4
