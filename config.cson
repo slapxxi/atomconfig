@@ -23,6 +23,7 @@
   "autocomplete-elixir": {}
   "autocomplete-java": {}
   "autocomplete-modules":
+    babelPluginModuleResolver: true
     webpack: true
   "autocomplete-plus":
     confirmCompletion: "enter"
@@ -37,10 +38,10 @@
     disabledPackages: [
       "envygeeks-file-icons"
       "file-type-icons"
-      "linter"
       "language-python"
       "Parinfer"
       "proto-repl"
+      "build"
     ]
     excludeVcsIgnoredPaths: false
     telemetryConsent: "limited"
@@ -105,12 +106,19 @@
   "one-dark-ui":
     fontSize: 13
     layoutMode: "Compact"
+  pigments:
+    autocompleteSuggestionsFromValue: true
   "python-tools": {}
+  tabs:
+    addNewTabsAtEnd: true
   term2:
     colors: {}
   "terminal-status": {}
-  "vim-mode":
-    startInInsertMode: true
+  "tool-bar": {}
+  "tree-view":
+    autoReveal: true
+    focusOnReveal: false
+  "vim-mode": {}
   welcome:
     showOnStartup: false
 ".babel.regexp.source":

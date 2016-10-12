@@ -1,19 +1,20 @@
+@import 'colors';
+
 :root {
   --color-bg: #10101B;
   --color-text-em: #16F;
   --color-text-transparent: rgba(220,220,255,0.2);
-  --gradient-main: linear-gradient(to right, var(--color-text-em), cyan);
+  --gradient-main: linear-gradient(to right, @grey-dark, @grey);
   --font-main: "Source Code Pro", Helvetica, sans-serif;
 }
 
 .title-bar {
-  background: var(--color-bg);
+  background: @grey-dark;
   padding: 1.3em;
 
   & > .title {
-    text-shadow: 1px 1px var(--color-text-transparent);
     font-family: var(--font-main);
-    color: var(--color-text-transparent);
+    color: @grey;
     -webkit-font-smoothing: auto;
   }
 }
@@ -21,10 +22,6 @@
 .tab-bar {
   background: #0D0D17;
   -webkit-font-smoothing: auto;
-
-  .tab {
-    overflow: visible;
-  }
 
   .tab .title {
     background: 0;
@@ -36,12 +33,12 @@
 }
 
 .status-bar {
-  background: var(--color-bg);
+  background: @grey-dark;
   font-size: 1em;
 }
 
 .underline-cursor {
-  background-color: var(--color-text-em);
+  background-color: @blue;
 }
 
 atom-text-editor::shadow {
@@ -52,14 +49,14 @@ atom-text-editor::shadow {
 }
 
 .tree-view {
-  background-color: var(--color-bg);
+  background-color: @grey-dark;
 
   &::before {
     display: none;
   }
 
   .selected::before {
-    background-color: #15151F;
+    background: #15151E;
   }
 }
 
@@ -79,7 +76,7 @@ atom-text-editor.vim-mode.normal-mode {
   &::shadow, & {
     .cursor {
       background-color: transparent !important;
-      border-bottom: 2px solid cyan !important;
+      border-bottom: 2px solid @md-cyan !important;
       opacity: 1 !important;
     }
   }
@@ -90,7 +87,7 @@ atom-text-editor.vim-mode.normal-mode {
 .list-group li:not(.list-nested-item).status-added,
 .list-tree li:not(.list-nested-item).status-added {
   position: relative;
-  color: #424255 !important;
+  color: @grey-middle !important;
 
   &:after {
     content: '';
@@ -99,7 +96,7 @@ atom-text-editor.vim-mode.normal-mode {
     right: calc(100% + 1px);
     width: 5px;
     height: 5px;
-    background: #A1FF38;
+    background: @md-green;
     border-radius: 10px;
   }
 }
@@ -109,7 +106,7 @@ atom-text-editor.vim-mode.normal-mode {
 .list-group li:not(.list-nested-item).status-modified,
 .list-tree li:not(.list-nested-item).status-modified {
   position: relative;
-  color: #424255 !important;
+  color: @grey-middle !important;
 
   &:after {
     content: '';
@@ -118,7 +115,7 @@ atom-text-editor.vim-mode.normal-mode {
     right: calc(100% + 1px);
     width: 5px;
     height: 5px;
-    background: orange;
+    background: @md-amber;
     border-radius: 10px;
   }
 }
@@ -127,7 +124,7 @@ atom-text-editor.vim-mode.normal-mode {
 .list-tree li.list-nested-item.status-ignored > .list-item,
 .list-group li:not(.list-nested-item).status-ignored,
 .list-tree li:not(.list-nested-item).status-ignored {
-  color: #2A2A3F;
+  color: @grey;
 }
 
 
@@ -135,5 +132,17 @@ atom-text-editor.vim-mode.normal-mode {
 .list-tree li.list-nested-item > .list-item,
 .list-group li:not(.list-nested-item),
 .list-tree li:not(.list-nested-item){
-  color: #424255;
+  color: @grey-middle;
+}
+
+.status-modified {
+  color: @md-amber;
+}
+
+.status-added {
+  color: @md-green;
+}
+
+.status-ignored {
+  color: @grey;
 }
