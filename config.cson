@@ -34,6 +34,19 @@
   build:
     minimizedHeight: 0.35
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     destroyEmptyPanes: false
     disabledPackages: [
       "envygeeks-file-icons"
@@ -56,7 +69,7 @@
       npmapm: true
   "django-templates": {}
   editor:
-    fontFamily: "\"Source Code Pro\""
+    fontFamily: "\"Source Code Pro\", \"Helvetica Neue\""
     fontSize: 15
     invisibles: {}
     preferredLineLength: 90
@@ -109,6 +122,11 @@
   pigments:
     autocompleteSuggestionsFromValue: true
   "python-tools": {}
+  "sync-settings":
+    _analyticsUserId: "fb249679-61d6-42b9-b83a-bc76caf8d45f"
+    _lastBackupHash: "dba831bc83969ed37898707bf01aeb2503ee7f76"
+    gistId: "21132be70e2744fec7e023f8ab6cee97"
+    personalAccessToken: "9bc7e11328624152de197f3ed8237d8415fc1b7d"
   tabs:
     addNewTabsAtEnd: true
   term2:

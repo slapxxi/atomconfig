@@ -20,21 +20,66 @@
 }
 
 .tab-bar {
-  background: #0D0D17;
+  background: #0C0C16;
   -webkit-font-smoothing: auto;
 
-  .tab .title {
-    background: 0;
-  }
+  .tab {
+    .close-icon:hover {
+      background-color: @blue;
+    }
 
-  .tab::before {
-    display: none;
+    .title {
+      background: 0;
+    }
+
+    &::before {
+      display: none;
+    }
   }
+}
+
+.item-views {
+  background: #0C0C16;
 }
 
 .status-bar {
   background: @grey-dark;
   font-size: 1em;
+  color: @grey-middle;
+
+  .current-path,
+  .inline-block,
+  .icon-gear:before {
+    color: @grey-middle;
+
+    a:hover {
+      color: @md-cyan;
+    }
+  }
+}
+
+.tooltip {
+  @tooltip-color: @md-cyan;
+
+  &.top .tooltip-arrow {
+    border-top-color: @tooltip-color;
+  }
+
+  &.bottom .tooltip-arrow {
+    border-bottom-color: @tooltip-color;
+  }
+
+  &.left .tooltip-arrow {
+    border-left-color: @tooltip-color;
+  }
+
+  &.right .tooltip-arrow {
+    border-right-color: @tooltip-color;
+  }
+
+  .tooltip-inner {
+    background: @tooltip-color;
+  }
 }
 
 .underline-cursor {
@@ -56,14 +101,15 @@ atom-text-editor::shadow {
   }
 
   .selected::before {
-    background: #15151E;
+    background: @grey-dark;
   }
 }
 
-// style the background and foreground colors on the atom-text-editor-element
-// itself
+// Style the background and foreground colors on
+// the atom-text-editor-element itself
 atom-text-editor {
-  -webkit-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  // -webkit-font-smoothing: grayscale;
 }
 
 // To style other content in the text editor's shadow DOM, use the ::shadow

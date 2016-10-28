@@ -1,10 +1,21 @@
-blur:
-  title: "blur"
-  paths: [
-    "/Users/slava/github/blur-syntax"
-  ]
-"blur-light":
-  title: "blur-light"
-  paths: [
-    "/Users/slava/github/blur-syntax-light"
-  ]
+[
+  {
+    title: "blur"
+    paths: [
+      "/Users/slava/github/blur-syntax"
+    ]
+  }
+  {
+    title: "blur-light"
+    paths: [
+      "/Users/slava/github/blur-syntax-light"
+    ]
+  }
+  {
+    title: "CS:GO Configuration"
+    group: "Gaming"
+    paths: [
+      "/Users/slava/Library/Application Support/Steam/userdata/175265266/730/local/cfg"
+    ]
+  }
+]
