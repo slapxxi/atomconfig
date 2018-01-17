@@ -21,6 +21,7 @@
 	'Jinja2 tag':
 		'prefix': 'jt'
 		'body': '{% $1 %}'
+
 '.source.python':
   'Async New Method':
     'prefix': 'adefs'
@@ -31,3 +32,98 @@
   'async for':
     'prefix': 'afor'
     'body': 'async for ${1:value} in ${2:variable}:\n\t${3:pass}'
+
+'.source.js':
+  'ComponentDidMount method':
+    'prefix': 'cdm'
+    'body': 'componentDidMount(${1}) {\n  ${2}\n}'
+  'ComponentWillMount method':
+    'prefix': 'cwm'
+    'body': 'componentWillMount(${1}) {\n  ${2}\n}'
+  'Functional React Component':
+    'prefix': 'com'
+    'body': 'class ${1:Component} extends React.Component {\n  render() {\n    return ${2:div}\n  }\n}${3}'
+  'React Component':
+    'prefix': 'comf'
+    'body': 'function ${1:Component}(${2:props}) {\n  return ${3:div}${4}\n}${5}'
+  'Styled Component':
+    'prefix': 'coms'
+    'body': 'const ${1:Component} = styled.${2:div}`\n`;${3}'
+  'describe block':
+    'prefix': 'desc'
+    'body': 'describe(\'${1:description}\', () => {\n  ${2:// body...}\n});${3}'
+  'it spec':
+    'prefix': 'it'
+    'body': 'it(\'${1:description}\', () => {\n  ${2:// body...}\n});${3}'
+  'it spec pending':
+    'prefix': 'itp'
+    'body': 'it(\'${1:description}\');${2}'
+  'it spec async':
+    'prefix': 'ita'
+    'body': 'it(\'${1:description}\', async () => {\n  ${2:// body...}\n});${3}'
+  'function':
+    'prefix': 'f'
+    'body': 'function ${1:name}(${2:params}) {${3}}${4}'
+  'async function':
+    'prefix': 'af'
+    'body': 'async function ${1:name}(${2:params}) {${3}}'
+  'generator function':
+    'prefix': 'gf'
+    'body': 'function* ${1:name}(${2:params}) {${3}}'
+  'arrow function':
+    'prefix': 'ff'
+    'body': '${1:param} => ${2:result}'
+  'arrow function of object':
+    'prefix': 'ffo'
+    'body': '({${1:x, y}}) => ${2:result}'
+  'async arrow function':
+    'prefix': 'ffa'
+    'body': 'async (${1:param}) => ${2:result}'
+  'generator arrow function':
+    'prefix': 'ffg'
+    'body': '* (${1:param}) => ${2:result}'
+  'expect':
+    'prefix': 'x'
+    'body': 'expect(${1:result})'
+  'expect to equal':
+    'prefix': 'xe'
+    'body': 'expect(${1:result}).toEqual(${2:value})${3}'
+  'expect to be':
+    'prefix': 'xb'
+    'body': 'expect(${1:result}).toBe(${2:value})${3}'
+  'expect to match snapshot':
+    'prefix': 'xm'
+    'body': 'expect(${1:result.toJSON()}).toMatchSnapshot()${2}'
+  'before':
+    'prefix': 'bef'
+    'body': 'before${1:Each}(() => {\n  ${2}\n});${3}'
+  'after':
+    'prefix': 'aft'
+    'body': 'after${1:Each}(() => {\n  ${2}\n});${3}'
+  'import all':
+    'prefix': 'impa'
+    'body': 'import * as ${1:name} from \'${2:module}\'${3}'
+  'import':
+    'prefix': 'imp'
+    'body': 'import \{${2}\} from \'${1:location}\''
+  'import type':
+    'prefix': 'impt'
+    'body': 'import type {${2:type}} from \'${1:location}\''
+  'import React':
+    'prefix': 'impr'
+    'body': 'import React from \'react\';${1}'
+  'export default':
+    'prefix': 'exd'
+    'body': 'export default ${1:name}${2}'
+  'class':
+    'prefix': 'cls'
+    'body': 'class ${1:Name} {\n}${2}'
+  'create object':
+    'prefix': 'oj'
+    'body': '{\n  ${1:name: value},\n};'
+  'create object inline':
+    'prefix': 'oji'
+    'body': '{ ${1:name: value}, ${2} }${3}'
+  'create object method':
+    'prefix': 'ojf'
+    'body': '{\n  ${1:name}(${2:params}) {\n    return ${3:value}${4}\n  },\n};${5}'
