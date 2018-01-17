@@ -1,16 +1,20 @@
 @import 'colors';
+@import 'syntax-variables';
 
 :root {
-  --color-bg: #10101B;
-  --color-text-em: #16F;
-  --color-text-transparent: rgba(220,220,255,0.2);
-  --gradient-main: linear-gradient(to right, @grey-dark, @grey);
-  --font-main: "Source Code Pro", Helvetica, sans-serif;
+  --color-bg: #050510;
+  --color-text-em: #16f;
+  --color-text-transparent: rgba(220, 220, 255, 0.2);
+  --gradient-main: linear-gradient(
+    to right,
+    @syntax-background-color,
+    @grey
+  );
+  --font-main: 'Source Code Pro', Helvetica, sans-serif;
 }
 
 .title-bar {
-  background: @grey-dark;
-  padding: 1.3em;
+  background: @syntax-background-color;
 
   & > .title {
     font-family: var(--font-main);
@@ -20,10 +24,16 @@
 }
 
 .tab-bar {
-  background: #0C0C16;
+  background: #050510;
   -webkit-font-smoothing: auto;
 
   .tab {
+    background: #050510;
+
+    &.active {
+      background: @syntax-background-color;
+    }
+
     .close-icon:hover {
       background-color: @blue;
     }
@@ -39,18 +49,19 @@
 }
 
 .item-views {
-  background: #0C0C16;
+  background: #0c0c16;
+  background: #050510;
 }
 
 .status-bar {
-  background: @grey-dark;
-  font-size: 1em;
-  color: @grey-middle;
+  background: @syntax-background-color;
+  font-size: 0.94em;
+  color: @syntax-text-color;
 
   .current-path,
   .inline-block,
   .icon-gear:before {
-    color: @grey-middle;
+    color: @syntax-text-color;
 
     a:hover {
       color: @md-cyan;
@@ -59,7 +70,7 @@
 }
 
 .tooltip {
-  @tooltip-color: @md-cyan;
+  @tooltip-color: @color-keyword;
 
   &.top .tooltip-arrow {
     border-top-color: @tooltip-color;
@@ -94,14 +105,14 @@ atom-text-editor::shadow {
 }
 
 .tree-view {
-  background-color: @grey-dark;
+  background-color: @syntax-background-color;
 
   &::before {
     display: none;
   }
 
   .selected::before {
-    background: @grey-dark;
+    background: @syntax-background-color;
   }
 }
 
@@ -109,23 +120,16 @@ atom-text-editor::shadow {
 // the atom-text-editor-element itself
 atom-text-editor {
   -webkit-font-smoothing: subpixel-antialiased;
-  // -webkit-font-smoothing: grayscale;
 }
 
-// To style other content in the text editor's shadow DOM, use the ::shadow
-// expression
+// To style other content in the text editor's shadow DOM,
+// use the ::shadow expression
 atom-text-editor::shadow {
 }
 
-// Vim-mode customization
-atom-text-editor.vim-mode.normal-mode {
-  &::shadow, & {
-    .cursor {
-      background-color: transparent !important;
-      border-bottom: 2px solid @blue !important;
-      opacity: 1 !important;
-    }
-  }
+atom-text-editor.vim-mode-plus.normal-mode.is-focused .cursor {
+  background: @blue;
+  opacity: 0.475;
 }
 
 .list-group li.list-nested-item.status-added > .list-item,
@@ -133,7 +137,7 @@ atom-text-editor.vim-mode.normal-mode {
 .list-group li:not(.list-nested-item).status-added,
 .list-tree li:not(.list-nested-item).status-added {
   position: relative;
-  color: @grey-middle !important;
+  color: @syntax-text-color !important;
 
   &:after {
     content: '';
@@ -152,7 +156,7 @@ atom-text-editor.vim-mode.normal-mode {
 .list-group li:not(.list-nested-item).status-modified,
 .list-tree li:not(.list-nested-item).status-modified {
   position: relative;
-  color: @grey-middle !important;
+  color: @syntax-text-color !important;
 
   &:after {
     content: '';
@@ -173,12 +177,11 @@ atom-text-editor.vim-mode.normal-mode {
   color: @grey;
 }
 
-
 .list-group li.list-nested-item > .list-item,
 .list-tree li.list-nested-item > .list-item,
 .list-group li:not(.list-nested-item),
-.list-tree li:not(.list-nested-item){
-  color: @grey-middle;
+.list-tree li:not(.list-nested-item) {
+  color: @syntax-text-color;
 }
 
 .status-modified {
@@ -191,4 +194,212 @@ atom-text-editor.vim-mode.normal-mode {
 
 .status-ignored {
   color: @grey;
+}
+
+.mocha-test-runner .panel,
+.mocha-test-runner .results {
+  background: #050510;
+}
+
+.settings-view div > section.section.settings-panel {
+  border-top-color: transparent;
+}
+
+atom-dock .tab-bar .tab.active {
+  background: @syntax-background-color;
+}
+
+.texteditor.tab.sortable {
+  background: #050510;
+
+  &.active {
+  }
+}
+
+atom-notification.info {
+  &.icon::before {
+    background: #e3e3ef;
+    color: #9999b8;
+  }
+
+  .content {
+    background: #f3f3ff;
+    color: @syntax-text-color;
+  }
+}
+
+.sb-table.linter {
+  th,
+  th.sortable {
+    background: @syntax-background-color;
+    font-weight: normal;
+    color: @white;
+  }
+
+  tbody {
+    background: @syntax-background-color;
+
+    td {
+      color: @syntax-text-color;
+    }
+  }
+}
+
+atom-text-editor.editor .linter-highlight.linter-error.linter-gutter,
+.linter-highlight.linter-error.linter-gutter {
+  color: @color-error;
+}
+
+.highlight-error {
+  background: @color-error;
+  text-shadow: none;
+}
+
+autocomplete-suggestion-list.select-list.popover-list {
+  @bg-color: lighten(@syntax-background-color, 4%);
+  @selected-bg-color: lighten(@bg-color, 4%);
+  @text-color: lighten(@syntax-text-color, 25%);
+  @selected-text-color: @white;
+
+  background: @bg-color;
+
+  .suggestion-description {
+    background: darken(@bg-color, 2%);
+    color: darken(@text-color, 10%);
+  }
+
+  ol.list-group {
+    .icon-container,
+    .word-container {
+      background: @bg-color;
+    }
+
+    .character-match {
+      color: @text-color;
+    }
+
+    .word {
+      color: @text-color;
+    }
+
+    li.selected {
+      color: @text-color;
+
+      .left-label,
+      .right-label,
+      .icon-container,
+      .word-container {
+        background: @selected-bg-color;
+        color: @selected-text-color;
+      }
+
+      .word {
+        color: @selected-text-color;
+      }
+
+      .character-match {
+        color: @selected-text-color;
+      }
+    }
+  }
+}
+
+.github-FilePatchView,
+.github-HunkView,
+.github-Panel {
+  background: @syntax-background-color;
+  color: @grey-middle;
+}
+
+.github-HunkView-header {
+  background: @color-keyword;
+  color: @white;
+}
+
+.github-HunkView-title {
+  color: @white;
+}
+
+.github-HunkView-line {
+  font-weight: 500;
+  color: @grey-middle;
+}
+
+.github-HunkView-line.is-added,
+.github-HunkView-lineContent {
+}
+
+.github-HunkView-discardButton:hover {
+  background: @md-red;
+  color: @color-string;
+}
+
+.github-HunkView-discardButton:hover,
+.github-HunkView-stageButton:hover {
+  background: @md-green;
+  color: @color-string;
+}
+
+.github-FilePatchListView-item.is-selected {
+  background: @grey-dark;
+}
+
+.github-CommitView-editor {
+  background: #050510 !important;
+
+  .editor {
+    background: #050510;
+    background: @grey-dark;
+    color: white;
+  }
+
+  .editor.is-focused {
+    border-color: @grey;
+  }
+
+  .placeholder-text {
+    color: @grey;
+  }
+}
+
+.btn {
+  background: #050510;
+  background: @color-keyword;
+  color: @white;
+
+  &:hover {
+    background: @color-keyword;
+    color: @white;
+    opacity: 0.9;
+  }
+}
+
+atom-text-editor {
+  .gutter .line-number {
+    &.git-line-modified {
+      border-left: 1px solid @grey;
+      padding-left: ~'calc(0.5em - 2px)';
+    }
+
+    &.git-line-added {
+      border-left: 1px solid @grey;
+      padding-left: ~'calc(0.5em - 2px)';
+    }
+
+    &.git-line-removed:before {
+      @size: 4px;
+
+      position: absolute;
+      left: 0;
+      bottom: -@size;
+      height: 0;
+      width: 0;
+      content: ' ';
+      border: solid transparent;
+      border-left-color: @syntax-color-removed;
+      border-width: @size;
+      margin-top: -@size;
+      pointer-events: none;
+    }
+  }
 }
