@@ -317,6 +317,7 @@ autocomplete-suggestion-list.select-list.popover-list {
 }
 
 .github-HunkView-title {
+  background: @color-keyword;
   color: @white;
 }
 
@@ -325,8 +326,10 @@ autocomplete-suggestion-list.select-list.popover-list {
   color: @grey-middle;
 }
 
-.github-HunkView-line.is-added,
-.github-HunkView-lineContent {
+.github-HunkView-line.is-selected {
+  > .github-HunkView-lineNumber {
+    background: @color-keyword !important;
+  }
 }
 
 .github-HunkView-discardButton:hover {
@@ -349,7 +352,7 @@ autocomplete-suggestion-list.select-list.popover-list {
 }
 
 .github-CommitView-editor {
-  background: #050510 !important;
+  background: @grey-dark !important;
 
   .editor {
     background: #050510;
@@ -359,6 +362,7 @@ autocomplete-suggestion-list.select-list.popover-list {
 
   .editor.is-focused {
     border-color: @grey;
+    border-color: rgba(225, 205, 255, 0.1);
   }
 
   .placeholder-text {
@@ -377,14 +381,13 @@ autocomplete-suggestion-list.select-list.popover-list {
 }
 
 .btn {
-  background: #050510;
-  background: @color-keyword;
-  color: @white;
+  // background: @color-keyword;
+  background: @grey-dark;
+  color: @grey-middle;
 
   &:hover {
     background: @color-keyword;
     color: @white;
-    opacity: 0.9;
   }
 }
 
