@@ -2,6 +2,16 @@
   "advanced-new-file":
     showFilesInAutoComplete: true
     suggestCurrentFilePath: true
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnType: false
+    "atom-ide-datatip": {}
+    "atom-ide-diagnostics-ui":
+      showDiagnosticTraces: true
+    "atom-ide-outline-view": {}
+    use:
+      "atom-ide-busy-signal": false
+      "atom-ide-code-format": false
   "atom-material-ui":
     colors:
       abaseColor: "#1166ff"
@@ -11,16 +21,19 @@
     tabs:
       compactTabs: true
     treeView:
-      compactList: true
+      compactList: false
     ui:
       animations: false
-      panelShadows: true
+      useAnimations: false
   "atom-ternjs":
     inlineFnCompletionDocumentation: true
     useSnippets: true
+  "atom-toolbar": {}
   autocomplete:
     includeCompletionsFromAllBuffers: true
   "autocomplete-elixir": {}
+  "autocomplete-flow":
+    pathToFlowExecutable: "/usr/local/bin/flow"
   "autocomplete-java": {}
   "autocomplete-modules":
     babelPluginModuleResolver: true
@@ -28,9 +41,11 @@
   "autocomplete-plus":
     confirmCompletion: "enter"
     includeCompletionsFromAllBuffers: true
-  "autocomplete-python": {}
+  "autocomplete-python":
+    useKite: false
   autosave:
     enabled: true
+  "bracket-matcher": {}
   build:
     minimizedHeight: 0.35
   core:
@@ -39,6 +54,9 @@
         ".buckconfig"
         ".hgrc"
         ".flowconfig"
+      ]
+      "source.jade": [
+        "pug"
       ]
       "source.json": [
         ".arcconfig"
@@ -51,25 +69,43 @@
     disabledPackages: [
       "envygeeks-file-icons"
       "file-type-icons"
-      "language-python"
       "Parinfer"
       "proto-repl"
       "build"
+      "python-tools"
+      "script"
+      "language-csharp"
+      "language-clojure"
+      "language-c"
+      "language-go"
+      "language-java"
+      "language-objective-c"
+      "language-perl"
+      "language-php"
+      "link"
+      "open-on-github"
+      "autocomplete-python"
+      "linter-stylelint"
+      "wrap-guide"
+      "language-python"
+      "flow-ide"
+      "linter-ui-default"
+      "linter"
     ]
-    excludeVcsIgnoredPaths: false
+    packagesWithKeymapsDisabled: []
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "blur-syntax"
     ]
-    useCustomTitleBar: true
+    titleBar: "custom-inset"
   "css-comb": {}
   deprecated:
     tool:
       npmapm: true
   "django-templates": {}
   editor:
-    fontFamily: "\"Source Code Pro\", \"Helvetica Neue\""
+    fontFamily: "Hasklig, \"Source Code Pro\", \"Helvetica Neue\""
     fontSize: 15
     invisibles: {}
     preferredLineLength: 90
@@ -86,10 +122,23 @@
   "file-icons":
     coloured: false
     forceShow: true
+  "flow-ide":
+    executablePath: "/usr/local/bin/flow"
+  "fuzzy-finder":
+    ignoredNames: [
+      "node_modules"
+    ]
+  "git-diff": {}
+  github: {}
   "haskell-ghc-mod":
     ghcModPath: "/Users/slava/.cabal/bin/ghc-mod"
     ghcModiPath: "/Users/slava/.cabal/bin/ghc-modi"
   "highlight-selected": {}
+  "ide-flow":
+    flowPath: "/usr/local/bin/flow"
+  "ide-flowtype":
+    customFlowPath: {}
+    tryFlowBin: true
   "ide-haskell":
     useBackend: "haskell-ghc-mod"
   iex:
@@ -99,44 +148,74 @@
     connectOnStartup: true
     host: "https://irc.freenode.net"
     nickname: "slavapavlutin"
+  "js-hyperclick":
+    extensions: [
+      ".js"
+      ".json"
+      ".node"
+      ".jsx"
+    ]
   "language-babel": {}
   linter:
     clearOnChange: true
     lintOnChange: false
     lintOnEditorFocus: false
-    lintOnFly: false
     lintOnSave: true
     statusBar: "Show error of the selected line"
   "linter-elixirc":
     elixircExecutablePath: "/usr/local/bin/elixirc"
     includeDirs: "~/Projects/whisper"
+  "linter-eslint":
+    advancedLocalNodeModules: "./node_modules/"
+    ignoreFixableRulesWhileTyping: true
+  "linter-flow": {}
   "linter-pylint":
     pythonPath: "/Users/slava/.pyenv/shims/python"
   "linter-scss-lint":
     executablePath: "/Users/slava/.rvm/gems/ruby-2.2.1/bin/scss-lint"
+  "linter-stylelint":
+    disableWhenNoConfig: false
+    useStandard: true
+  "linter-ui-default":
+    panelHeight: 112
   "markdown-preview":
     useGitHubStyle: true
+  "mocha-test-runner":
+    env: "NODE_ENV=test"
+    options: "--compilers js:babel-register --require ./test/test-helper"
+  notifications: {}
   "one-dark-ui":
     fontSize: 13
-    layoutMode: "Compact"
   pigments:
     autocompleteSuggestionsFromValue: true
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      showInStatusBar: true
+    prettierOptions:
+      printWidth: 71
+      singleQuote: true
+      trailingComma: "all"
   "python-tools": {}
   "sync-settings":
     _analyticsUserId: "fb249679-61d6-42b9-b83a-bc76caf8d45f"
-    _lastBackupHash: "dba831bc83969ed37898707bf01aeb2503ee7f76"
-    gistId: "21132be70e2744fec7e023f8ab6cee97"
-    personalAccessToken: "9bc7e11328624152de197f3ed8237d8415fc1b7d"
+    _lastBackupHash: "cfb2879a9ab0aa4a345471024c2ade77f47bc796"
+    gistId: "7a2bf22b0818ac0adc77693b0fccc971"
+    personalAccessToken: "99ca66fa821fb0b63fe08505a911ddfe3e6ad54d"
   tabs:
     addNewTabsAtEnd: true
   term2:
     colors: {}
   "terminal-status": {}
-  "tool-bar": {}
+  "tool-bar":
+    position: "Left"
   "tree-view":
-    autoReveal: true
     focusOnReveal: false
+    squashDirectoryNames: true
   "vim-mode": {}
+  "vim-mode-plus":
+    keymapPToPutWithAutoIndent: true
+    keymapUnderscoreToReplaceWithRegister: true
   welcome:
     showOnStartup: false
 ".babel.regexp.source":
@@ -160,11 +239,19 @@
     preferredLineLength: 90
     softWrapHangingIndent: 2
     tabLength: 2
+".jade.source":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 4
 ".js.jsx.source":
   editor:
     preferredLineLength: 90
     softWrapHangingIndent: 4
 ".languagebabel.ttlextension":
+  editor:
+    preferredLineLength: 90
+    softWrapHangingIndent: 4
+".pyjade.source":
   editor:
     preferredLineLength: 90
     softWrapHangingIndent: 4
