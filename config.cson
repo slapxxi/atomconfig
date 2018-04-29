@@ -1,17 +1,77 @@
 "*":
+  "":
+    babel:
+      regexp:
+        source:
+          editor:
+            preferredLineLength: 90
+            softWrapHangingIndent: 4
+    basic:
+      html:
+        text:
+          editor:
+            preferredLineLength: 90
+            softWrapHangingIndent: 2
+    clojure:
+      source:
+        editor:
+          preferredLineLength: 90
+          softWrapHangingIndent: 4
+    django:
+      html:
+        text:
+          editor:
+            preferredLineLength: 90
+            softWrapHangingIndent: 2
+      python:
+        source:
+          editor:
+            preferredLineLength: 90
+            softWrapHangingIndent: 2
+            tabLength: 2
+    jade:
+      source:
+        editor:
+          preferredLineLength: 90
+          softWrapHangingIndent: 4
+    js:
+      jsx:
+        source:
+          editor:
+            preferredLineLength: 90
+            softWrapHangingIndent: 4
+    languagebabel:
+      ttlextension:
+        editor:
+          preferredLineLength: 90
+          softWrapHangingIndent: 4
+    pyjade:
+      source:
+        editor:
+          preferredLineLength: 90
+          softWrapHangingIndent: 4
+    python:
+      source:
+        editor:
+          autoIndent: true
+          tabLength: 4
+    source:
+      swift:
+        editor:
+          preferredLineLength: 90
+          softWrapHangingIndent: 4
+          tabLength: 4
   "advanced-new-file":
     showFilesInAutoComplete: true
     suggestCurrentFilePath: true
   "atom-ide-ui":
     "atom-ide-code-format":
       formatOnType: false
-    "atom-ide-datatip": {}
     "atom-ide-diagnostics-ui":
       showDiagnosticTraces: true
-    "atom-ide-outline-view": {}
     use:
-      "atom-ide-busy-signal": false
-      "atom-ide-code-format": false
+      "atom-ide-busy-signal": "never"
+      "atom-ide-code-format": "never"
   "atom-material-ui":
     colors:
       abaseColor: "#1166ff"
@@ -28,13 +88,10 @@
   "atom-ternjs":
     inlineFnCompletionDocumentation: true
     useSnippets: true
-  "atom-toolbar": {}
   autocomplete:
     includeCompletionsFromAllBuffers: true
-  "autocomplete-elixir": {}
   "autocomplete-flow":
     pathToFlowExecutable: "/usr/local/bin/flow"
-  "autocomplete-java": {}
   "autocomplete-modules":
     babelPluginModuleResolver: true
     webpack: true
@@ -45,7 +102,6 @@
     useKite: false
   autosave:
     enabled: true
-  "bracket-matcher": {}
   build:
     minimizedHeight: 0.35
   core:
@@ -88,7 +144,6 @@
       "linter-stylelint"
       "wrap-guide"
       "language-python"
-      "flow-ide"
       "linter-ui-default"
       "linter"
     ]
@@ -99,15 +154,12 @@
       "blur-syntax"
     ]
     titleBar: "custom-inset"
-  "css-comb": {}
   deprecated:
     tool:
       npmapm: true
-  "django-templates": {}
   editor:
     fontFamily: "Hasklig, \"Source Code Pro\", \"Helvetica Neue\""
     fontSize: 15
-    invisibles: {}
     preferredLineLength: 90
     scrollPastEnd: true
     showIndentGuide: true
@@ -115,10 +167,8 @@
     softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 4
     tabType: "soft"
-  emmet: {}
   "exception-reporting":
     userId: "6b797269-fcaf-8cab-78fe-97d729abd340"
-  "fancy-new-file": {}
   "file-icons":
     coloured: false
     forceShow: true
@@ -128,21 +178,15 @@
     ignoredNames: [
       "node_modules"
     ]
-  "git-diff": {}
-  github: {}
   "haskell-ghc-mod":
     ghcModPath: "/Users/slava/.cabal/bin/ghc-mod"
     ghcModiPath: "/Users/slava/.cabal/bin/ghc-modi"
-  "highlight-selected": {}
   "ide-flow":
     flowPath: "/usr/local/bin/flow"
   "ide-flowtype":
-    customFlowPath: {}
     tryFlowBin: true
   "ide-haskell":
     useBackend: "haskell-ghc-mod"
-  iex:
-    colors: {}
   irc:
     channels: "#elixir-lang"
     connectOnStartup: true
@@ -155,7 +199,6 @@
       ".node"
       ".jsx"
     ]
-  "language-babel": {}
   linter:
     clearOnChange: true
     lintOnChange: false
@@ -168,7 +211,6 @@
   "linter-eslint":
     advancedLocalNodeModules: "./node_modules/"
     ignoreFixableRulesWhileTyping: true
-  "linter-flow": {}
   "linter-pylint":
     pythonPath: "/Users/slava/.pyenv/shims/python"
   "linter-scss-lint":
@@ -183,7 +225,7 @@
   "mocha-test-runner":
     env: "NODE_ENV=test"
     options: "--compilers js:babel-register --require ./test/test-helper"
-  notifications: {}
+  narrow: {}
   "one-dark-ui":
     fontSize: 13
   pigments:
@@ -193,10 +235,11 @@
       enabled: true
       showInStatusBar: true
     prettierOptions:
-      printWidth: 71
+      arrowParens: "always"
+      printWidth: 70
       singleQuote: true
       trailingComma: "all"
-  "python-tools": {}
+    scopes: {}
   "sync-settings":
     _analyticsUserId: "fb249679-61d6-42b9-b83a-bc76caf8d45f"
     _lastBackupHash: "cfb2879a9ab0aa4a345471024c2ade77f47bc796"
@@ -204,63 +247,13 @@
     personalAccessToken: "99ca66fa821fb0b63fe08505a911ddfe3e6ad54d"
   tabs:
     addNewTabsAtEnd: true
-  term2:
-    colors: {}
-  "terminal-status": {}
   "tool-bar":
     position: "Left"
   "tree-view":
     focusOnReveal: false
     squashDirectoryNames: true
-  "vim-mode": {}
   "vim-mode-plus":
     keymapPToPutWithAutoIndent: true
     keymapUnderscoreToReplaceWithRegister: true
   welcome:
     showOnStartup: false
-".babel.regexp.source":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 4
-".basic.html.text":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 2
-".clojure.source":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 4
-".django.html.text":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 2
-".django.python.source":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 2
-    tabLength: 2
-".jade.source":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 4
-".js.jsx.source":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 4
-".languagebabel.ttlextension":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 4
-".pyjade.source":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 4
-".python.source":
-  editor:
-    autoIndent: true
-    tabLength: 4
-".source.swift":
-  editor:
-    preferredLineLength: 90
-    softWrapHangingIndent: 4
-    tabLength: 4

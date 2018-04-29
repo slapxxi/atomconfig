@@ -34,6 +34,18 @@
     'body': 'async for ${1:value} in ${2:variable}:\n\t${3:pass}'
 
 '.source.js':
+  'componentDidCatch method':
+    'prefix': 'cdc'
+    'body': 'componentDidCatch(${1:props}) {\n  ${2}\n}'
+  'componentWillReceiveProps method':
+    'prefix': 'cwrp'
+    'body': 'componentWillReceiveProps(${1:props}) {\n  ${2}\n}'
+  'componentWillUnmount method':
+    'prefix': 'cwu'
+    'body': 'componentWillUnmount(${1}) {\n  ${2}\n}'
+  'componentWillUpdate method':
+    'prefix': 'cwup'
+    'body': 'componentWillUpdate(${1}) {\n  ${2}\n}'
   'ComponentDidMount method':
     'prefix': 'cdm'
     'body': 'componentDidMount(${1}) {\n  ${2}\n}'
@@ -67,20 +79,20 @@
   'async function':
     'prefix': 'af'
     'body': 'async function ${1:name}(${2:params}) {${3}}'
+  'async arrow function':
+    'prefix': 'afa'
+    'body': 'async (${1:params}) => ${2:body}'
   'generator function':
     'prefix': 'gf'
     'body': 'function* ${1:name}(${2:params}) {${3}}'
+  'arrow function with object':
+    'prefix': 'fao'
+    'body': '({ ${1:prop} }) => ({ ${2:prop} })'
   'arrow function':
-    'prefix': 'ff'
-    'body': '${1:param} => ${2:result}'
-  'arrow function of object':
-    'prefix': 'ffo'
-    'body': '({${1:x, y}}) => ${2:result}'
-  'async arrow function':
-    'prefix': 'ffa'
-    'body': 'async (${1:param}) => ${2:result}'
+    'prefix': 'fa'
+    'body': '(${1:param}) => ${2:result}'
   'generator arrow function':
-    'prefix': 'ffg'
+    'prefix': 'afg'
     'body': '* (${1:param}) => ${2:result}'
   'expect':
     'prefix': 'x'
